@@ -8,5 +8,7 @@ metadata:
 spec:
   ports:
     - port: 389
+      protocol: TCP
+  type: NordPort
   selector:
     app: ldap
