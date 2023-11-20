@@ -14,6 +14,7 @@ spec:
       labels:
         app: ldap
     spec: 
+      serviceAccountName: openldap
       containers:
         - name: ldap
           image: osixia/openldap:1.5.0
