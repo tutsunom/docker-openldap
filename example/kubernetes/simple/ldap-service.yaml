@@ -7,8 +7,16 @@ metadata:
   namespace: openldap-sample
 spec:
   ports:
-    - port: 389
+    - name: host-ldap-ssl
       protocol: TCP
-  type: NordPort
+      port: 636
+      targetPort: 636
+      nodePort: 30636
+    - name: host-ldap-tcp
+      port: 389
+      targetPort: 389
+      nodePort: 30389
+      protocol: TCP
+  type: NodePort
   selector:
     app: ldap
