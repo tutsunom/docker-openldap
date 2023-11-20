@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: ldap
-    spec:
+    spec: 
       containers:
         - name: ldap
           image: osixia/openldap:1.5.0
@@ -80,11 +80,11 @@ spec:
               value: "ldap"
       volumes:
         - name: ldap-data
-          hostPath:
-            path: "/data/ldap/db"
+          persistentVolumeClaim:
+            claimName: data
         - name: ldap-config
-          hostPath:
-            path: "/data/ldap/config"
+          persistentVolumeClaim:
+            claimName: config
         - name: ldap-certs
-          hostPath:
-            path: "/data/ldap/certs"
+          persistentVolumeClaim:
+            claimName: certs
